@@ -35,6 +35,7 @@ public class Main {
 					writer.println(temp);
 					keywordCitations.add(temp);
 				}
+				getTiers(citations,keywordCitations,kValue);
 			}
 			
 		} 
@@ -59,7 +60,7 @@ public class Main {
 			currObj=(JSONObject)keywordCitations.get(i);
 			while(currentTier<=k) {
 				writer.println("**Tier" + " "+ Integer.toString(currentTier)+"***");
-				currCitations=(JSONObject)currObj.get("citations");
+				currCitations=(JSONObject)currObj.get("references");
 				for(int j=0;i<currCitations.size();j++) {
 					id=(String)currCitations.get(i);
 					for(int a=0;a<originalList.size();a++) {
